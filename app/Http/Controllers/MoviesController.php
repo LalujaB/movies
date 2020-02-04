@@ -17,4 +17,15 @@ class MoviesController extends Controller
         return view('singlemovie', compact('movie'));
     }
 
+    public function create (){
+        return view('moviescreate');
+    }
+
+    public function store (Request $reques) {
+        $movie = Movie::create($reques->all());
+
+        return redirect('/movies');
+
+    }
+
 }
